@@ -1,0 +1,33 @@
+Importa o script. js OK
+
+
+No script JS
+Pegar os elementos dos botões
+  - play OK
+  - stop OK
+  - addition OK
+  - subtraction  OK
+  - florest OK
+  - rain OK
+  - coffe OK
+  - fire OK
+Pegar os valores de minutos e segundo  OK
+
+Nos botoes de controle de audio adicionar a classe soundSelect para a opção escolhida pelo usuario 
+  - utilizar os eventos para isso. OK
+  
+
+No botão addition
+  - colocar um evento de click OK
+  - Incrementar os minutos sempre que o evento for chamado OK
+
+No botão de subtraction
+  - colocar um evento de click OK
+  - decrementar os minutos sempre que o evento for chamado OK
+  - Verificar se os minutos são iguais a 0 se sim parar o decremento em 0 OK
+
+
+Criar um novo objeto para cada som a ser produzido
+  - Iniciar os objetos com cada som a ser repoduzido, os sons se encontram dentro de assests Ok
+  - dentro do envento de cada som inicializar a execução e parar os outros caso estejam tocando OK
+
