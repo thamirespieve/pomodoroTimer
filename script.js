@@ -13,14 +13,14 @@ const florestSound = new Audio('./assests/sound/Floresta.wav')
 const rainSound = new Audio('./assests/sound/Chuva.wav')
 const coffeSound = new Audio('./assests/sound/Cafeteria.wav')
 const fireSound = new Audio('./assests/sound/Lareira.wav')
-
+let idTimer
 /* Event Timer */
 function stopTimer(id) {
   clearTimeout(id)
 }
 
 buttonPlay.addEventListener('click', function timerCount() {
-  const idTimer = setTimeout(function () {
+  idTimer = setTimeout(function () {
     let minutes = Number(displayMinutes.textContent)
     let seconds = Number(displaySeconds.textContent)
 
@@ -28,6 +28,10 @@ buttonPlay.addEventListener('click', function timerCount() {
     displaySeconds.textContent = String(seconds).padStart(2, '0')
 
     if (minutes <= 0 && seconds <= 0) {
+      minutes = 25
+      seconds = 0
+      displayMinutes.textContent = String(minutes).padStart(2, '0')
+      displaySeconds.textContent = String(seconds).padStart(2, '0')
       stopTimer(idTimer)
       return
     }
@@ -41,6 +45,10 @@ buttonPlay.addEventListener('click', function timerCount() {
 
     timerCount()
   }, 1000)
+})
+
+buttonStop.addEventListener('click', () => {
+  stopTimer(idTimer)
 })
 
 /* Event addition or subtraction minutes */

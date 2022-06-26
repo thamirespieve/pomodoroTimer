@@ -33,12 +33,12 @@ Criar um novo objeto para cada som a ser produzido
 
 
 Botão de play
-  - fazer um setTimeout de 1s
-    - decrementar os minutos
-    - Verificar se os segundo são 00, se sim decremetar os minutos e mudar os segundo para 59
-    - Atualizar os valores de segundos e minutos
+  - fazer um setTimeout de 1s OK
+    - Verificar se os segundo são 00, se sim decremetar os minutos e mudar os segundo para 59 OK
+    - decrementar os minutos quando os segundo forem 59 OK
+    - Atualizar os valores de segundos e minutos OK
 
 
 Botão de stop 
-  - Parar o cronometro
-    - Pegar o id do setTimeout e passar para o clear
+  - Parar o cronometro OK
+    - Pegar o id do setTimeout e passar para o clear OK
