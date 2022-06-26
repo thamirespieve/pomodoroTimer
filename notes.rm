@@ -31,3 +31,14 @@ Criar um novo objeto para cada som a ser produzido
   - Iniciar os objetos com cada som a ser repoduzido, os sons se encontram dentro de assests Ok
   - dentro do envento de cada som inicializar a execução e parar os outros caso estejam tocando OK
 
+
+Botão de play
+  - fazer um setTimeout de 1s
+    - decrementar os minutos
+    - Verificar se os segundo são 00, se sim decremetar os minutos e mudar os segundo para 59
+    - Atualizar os valores de segundos e minutos
+
+
+Botão de stop 
+  - Parar o cronometro
+    - Pegar o id do setTimeout e passar para o clear

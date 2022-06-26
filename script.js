@@ -14,6 +14,55 @@ const rainSound = new Audio('./assests/sound/Chuva.wav')
 const coffeSound = new Audio('./assests/sound/Cafeteria.wav')
 const fireSound = new Audio('./assests/sound/Lareira.wav')
 
+/* Event Timer */
+function stopTimer(id) {
+  clearTimeout(id)
+}
+
+buttonPlay.addEventListener('click', function timerCount() {
+  const idTimer = setTimeout(function () {
+    let minutes = Number(displayMinutes.textContent)
+    let seconds = Number(displaySeconds.textContent)
+
+    seconds = --seconds
+    displaySeconds.textContent = String(seconds).padStart(2, '0')
+
+    if (minutes <= 0 && seconds <= 0) {
+      stopTimer(idTimer)
+      return
+    }
+
+    if (seconds <= 0) {
+      displayMinutes.textContent = String(--minutes).padStart(2, '0')
+      seconds = 5
+    }
+
+    displaySeconds.textContent = String(seconds).padStart(2, '0')
+
+    timerCount()
+  }, 1000)
+})
+
+/* Event addition or subtraction minutes */
+buttonAddition.addEventListener('click', () => {
+  let minutes = Number(displayMinutes.textContent)
+  minutes = minutes + 5
+
+  displayMinutes.textContent = String(minutes).padStart(2, '0')
+})
+
+buttonSubtraction.addEventListener('click', () => {
+  let minutes = Number(displayMinutes.textContent)
+  minutes = minutes - 5
+
+  if (minutes <= 0) {
+    displayMinutes.textContent = '00'
+  } else {
+    displayMinutes.textContent = String(minutes).padStart(2, '0')
+  }
+})
+
+/* Event Sound */
 buttonFlorestSound.addEventListener('click', () => {
   buttonFlorestSound.classList.add('soundSelect')
   buttonRainSound.classList.remove('soundSelect')
@@ -60,22 +109,4 @@ buttonFireSound.addEventListener('click', () => {
   florestSound.pause()
   rainSound.pause()
   coffeSound.pause()
-})
-
-buttonAddition.addEventListener('click', () => {
-  let minutes = Number(displayMinutes.textContent)
-  minutes = minutes + 5
-
-  displayMinutes.textContent = String(minutes).padStart(2, '0')
-})
-
-buttonSubtraction.addEventListener('click', () => {
-  let minutes = Number(displayMinutes.textContent)
-  minutes = minutes - 5
-
-  if (minutes <= 0) {
-    displayMinutes.textContent = '00'
-  } else {
-    displayMinutes.textContent = String(minutes).padStart(2, '0')
-  }
 })
