@@ -14,6 +14,7 @@ const rainSound = new Audio('./assests/sound/Chuva.wav')
 const coffeSound = new Audio('./assests/sound/Cafeteria.wav')
 const fireSound = new Audio('./assests/sound/Lareira.wav')
 let idTimer
+let isSoundSelected = false
 /* Event Timer */
 function stopTimer(id) {
   clearTimeout(id)
@@ -72,48 +73,57 @@ buttonSubtraction.addEventListener('click', () => {
 
 /* Event Sound */
 buttonFlorestSound.addEventListener('click', () => {
-  buttonFlorestSound.classList.add('soundSelect')
+  buttonFlorestSound.classList.toggle('soundSelect')
   buttonRainSound.classList.remove('soundSelect')
   buttonCoffeSound.classList.remove('soundSelect')
   buttonFireSound.classList.remove('soundSelect')
 
-  florestSound.play()
+  isSoundSelected = buttonFlorestSound.classList.contains('soundSelect')
+
+  isSoundSelected ? florestSound.play() : florestSound.pause()
   rainSound.pause()
   coffeSound.pause()
   fireSound.pause()
 })
 
 buttonRainSound.addEventListener('click', () => {
-  buttonRainSound.classList.add('soundSelect')
+  buttonRainSound.classList.toggle('soundSelect')
   buttonFlorestSound.classList.remove('soundSelect')
   buttonCoffeSound.classList.remove('soundSelect')
   buttonFireSound.classList.remove('soundSelect')
 
-  rainSound.play()
+  isSoundSelected = buttonRainSound.classList.contains('soundSelect')
+
+  isSoundSelected ? rainSound.play() : rainSound.pause()
+
   florestSound.pause()
   coffeSound.pause()
   fireSound.pause()
 })
 
 buttonCoffeSound.addEventListener('click', () => {
-  buttonCoffeSound.classList.add('soundSelect')
+  buttonCoffeSound.classList.toggle('soundSelect')
   buttonFlorestSound.classList.remove('soundSelect')
   buttonRainSound.classList.remove('soundSelect')
   buttonFireSound.classList.remove('soundSelect')
 
-  coffeSound.play()
+  isSoundSelected = buttonCoffeSound.classList.contains('soundSelect')
+
+  isSoundSelected ? coffeSound.play() : coffeSound.pause()
   florestSound.pause()
   rainSound.pause()
   fireSound.pause()
 })
 
 buttonFireSound.addEventListener('click', () => {
-  buttonFireSound.classList.add('soundSelect')
+  buttonFireSound.classList.toggle('soundSelect')
   buttonFlorestSound.classList.remove('soundSelect')
   buttonRainSound.classList.remove('soundSelect')
   buttonCoffeSound.classList.remove('soundSelect')
 
-  fireSound.play()
+  isSoundSelected = buttonFireSound.classList.contains('soundSelect')
+
+  isSoundSelected ? fireSound.play() : fireSound.pause()
   florestSound.pause()
   rainSound.pause()
   coffeSound.pause()
