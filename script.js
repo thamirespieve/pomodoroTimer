@@ -39,7 +39,7 @@ buttonPlay.addEventListener('click', function timerCount() {
 
     if (seconds <= 0) {
       displayMinutes.textContent = String(--minutes).padStart(2, '0')
-      seconds = 5
+      seconds = 59
     }
 
     displaySeconds.textContent = String(seconds).padStart(2, '0')
